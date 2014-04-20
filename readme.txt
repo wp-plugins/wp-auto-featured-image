@@ -11,7 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Choose an image from your library and set this for default featured image for page, post and custom post types.
 
 == Description ==
-
 Bored to set default images each time for a page, post or custom type or want a image to auto attach as thumbnail if a user ignores setting up a thumbnail? Here is the solution:
 
 This plugin provides you an easy way to set a default thumbnail image for your posts, pages or custom post types. You can select an image from your local machine or media library.
