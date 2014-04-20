@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Wordpress Auto Featured Image
  * Plugin URI: http://www.royalsoftwareservices.com/plugins/
- * Description: This plugin provides you an easy way to set a default image for all posts, pages or custom post types. This will auto set post thumbnail for a page, post, custom post types that is being created or modified and has no thumbnail.
+ * Description: This plugin provides you an easy way to set a default thumbnail image for your posts, pages or custom post types. You can select an image from your local machine or media library.
  * Author: Sanny Srivastava
  * Author URI: http://www.royalsoftwareservices.com
  * License: GPLv2 or later
