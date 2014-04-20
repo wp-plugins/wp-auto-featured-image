@@ -18,6 +18,7 @@ This plugin provides you an easy way to set a default thumbnail image for your p
 You can access this from the WordPress dashboard => "WAFI" (admin menu)
 
 Option to choose:
+
 * Select an image to set.
 * Choose post types for which it will trigger.
 
