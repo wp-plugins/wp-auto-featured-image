@@ -18,8 +18,8 @@ This plugin provides you an easy way to set a default thumbnail image for your p
 You can access this from the WordPress dashboard => "WAFI" (admin menu)
 
 Option to choose:
-1) Select an image to set.
-2) Choose post types for which it will trigger.
+* Select an image to set.
+* Choose post types for which it will trigger.
 
 Please note this application will trigger and set thumbnail when a new post is being published or modified and missing thumbnail.
 
@@ -35,12 +35,15 @@ You can set default image using your WordPress admin panel in \"WAFI\".
 
 = Will this auto set thumbnail for all existing posts/pages =
 
-This wil work for the post types you have configured from admin and not all existing rather it will work for newly cretaed or modified.
+This wil work for the post types you have configured from admin, it will work for newly cretaed or modified posts after your configuration from admin panel.
 
-= Camn I choose specific post type for this =
+= Can I choose specific post type for this =
 
 Yes, there is option from admin to set it for custom post types.
 
+= Can I choose custom image for default image =
+
+Yes, there is option from admin to set.
 
 == Changelog ==
 
