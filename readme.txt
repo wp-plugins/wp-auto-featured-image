@@ -8,10 +8,21 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Set default featured image for page, post and custom post types.
+Choose an image from your library and set this for default featured image for page, post and custom post types.
 
 == Description ==
-This plugin provides you an easy way to set a default image for all posts, pages or custom post types. This will auto set post thumbnail for a page, post, custom post types that is being created or modified and has no thumbnail.
+
+Bored to set default images each time for a page, post or custom type or want a image to auto attach as thumbnail if a user ignores setting up a thumbnail? Here is the solution:
+
+This plugin provides you an easy way to set a default thumbnail image for your posts, pages or custom post types. You can select an image from your local machine or media library.
+
+You can access this from the WordPress dashboard => "WAFI" (admin menu)
+
+Option to choose:
+1) Select an image to set.
+2) Choose post types for which it will trigger.
+
+Please note this application will trigger and set thumbnail when a new post is being published or modified and missing thumbnail.
 
 == Installation ==
 Upload the Wordpress Auto Featured Image folder to the /wp-content/plugins/ directory.
