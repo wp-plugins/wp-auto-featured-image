@@ -76,7 +76,7 @@ function wpafi_start() { ?>
 		<div class="postbox-container postbox" style="width: 99%;">  
 				<h3 class="hndle"><span>Help</span></h3>
                 <div class="inside">
-                <p class="multi-option">We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved few minutes of your effort, kindly get some time for a favor to us and<br />1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br />2) Make a small <a href="www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. <br />Any help would be very appreciated. Thanks for using this plugin.<br />Have a good day!!</p>
+                <p class="multi-option">We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved few minutes of your effort, kindly get some time for a favor to us and<br />1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br />2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. <br />Any help would be very appreciated. Thanks for using this plugin.<br />Have a good day!!</p>
               </div>
 		</div>
 	</div>   
