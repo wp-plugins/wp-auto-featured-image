@@ -1,9 +1,9 @@
 === Wordpress Auto Featured Image ===
 Contributors: sanny_rss
-Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default
+Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail
 Donate link: http://royalsoftwareservices.com/donate/
 Requires at least: 3.0
-Tested up to: 3.8.2
+Tested up to: 3.9
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,7 @@ This plugin provides you an easy way to set a default thumbnail image for your p
 You can access this from the WordPress dashboard => "WAFI" (admin menu)
 
 Option to choose:
+
 * Select an image to set.
 * Choose post types for which it will trigger.
 
@@ -29,19 +30,19 @@ Activate the plugin using the \'Plugins\' menu in your WordPress admin panel.
 You can set default image using your WordPress admin panel in \"WAFI\".
 
 == Screenshots ==
-1. Set default featured image.
+1. Admin panel set default featured image.
 
 == Frequently Asked Questions ==
 
-= Will this auto set thumbnail for all existing posts/pages =
+= Will this auto set thumbnail for all existing posts/pages? =
 
 This wil work for the post types you have configured from admin, it will work for newly cretaed or modified posts after your configuration from admin panel.
 
-= Can I choose specific post type for this =
+= Can I choose specific post type for this? =
 
 Yes, there is option from admin to set it for custom post types.
 
-= Can I choose custom image for default image =
+= Can I choose custom image for default image? =
 
 Yes, there is option from admin to set.
 
