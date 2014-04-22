@@ -105,7 +105,7 @@ function wpafi_admin_init(){
 function wpafi_desp() {
 echo '
 <div class="inside">
-	<p>Main description of this section here.</p>';
+	<p>Choose an image from your library and set this for default featured image for page, post and custom post types.</p>';
 } 
 
 
