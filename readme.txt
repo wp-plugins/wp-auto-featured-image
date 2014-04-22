@@ -30,7 +30,9 @@ Activate the plugin using the \'Plugins\' menu in your WordPress admin panel.
 You can set default image using your WordPress admin panel in \"WAFI\".
 
 == Screenshots ==
-1. Admin panel set default featured image.
+1. Admin option page for "WordPress Auto Featured Image".
+2. Choose a thumbnail image.
+3. It will start working if a new post created or updated.
 
 == Frequently Asked Questions ==
 
