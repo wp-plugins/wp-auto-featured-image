@@ -1,23 +1,23 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function(jQuery){
 	
 	var form_field;
     var upload_field_ID = '';
 	
 	
-	$('#delete_thumb').click(function() {				
+	jQuery('#delete_thumb').click(function() {				
 		var conf = confirm("Are you sure want to delete?");
 		if (conf == false) {
 		  return false
 		}	
-		$('#default_thumb_url').val('');		
-		$('#default_thumb_id').val('');
-		$('.button-primary').click();
+		jQuery('#default_thumb_url').val('');		
+		jQuery('#default_thumb_id').val('');
+		jQuery('.button-primary').click();
 	});
 	
-	$('#upload_default_thumb').click(function() {		
+	jQuery('#upload_default_thumb').click(function() {		
 		upload_field_ID = jQuery(this).prev('input');
         form_field      = jQuery('#default_thumb_url').attr( 'name' );
-		tb_show('Upload Thumb', 'media-upload.php?type=image&amp;TB_iframe=true&amp;post_id=0', false);
+		tb_show('Upload Thumb', 'media-upload.php?referer=wp_afi&type=image&amp;TB_iframe=true&amp;post_id=0', false);
 		return false;
 	});
 	
@@ -37,13 +37,12 @@ jQuery(document).ready(function($){
             }
 	 }
 	 
-		var image_url = $('img',html).attr('src');
-		$('#default_thumb_url').val(image_url);
-		$('#default_thumb_id').val(image_id);
+		var image_url = jQuery('img',html).attr('src');
+		jQuery('#default_thumb_url').val(image_url);
+		jQuery('#default_thumb_id').val(image_id);
 		tb_remove();
-		$('#uploaded_thumb_preview img').attr('src',image_url);
-		get_thumbID(image_url);
- 		$('.button-primary').click();
+		jQuery('#uploaded_thumb_preview img').attr('src',image_url);
+ 		jQuery('.button-primary').click();
 	}	
 });
 

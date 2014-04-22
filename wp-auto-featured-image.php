@@ -67,7 +67,8 @@ function wpafi_start() { ?>
 		<div class="postbox-container postbox" style="width: 99%;">  
 				<h3 class="hndle"><span>Support</span></h3>
                 <div class="inside">
-                <p class="multi-option">Have you encountered any problem with our plugin and need our help? Do you need to ask us any question? <br />You can post your question or issues at WordPress <a target="_blank" href="http://wordpress.org/support/plugin/wp-auto-featured-image">Support</a> or can directly mail me <a href="mailto:sannysrivastava@gmail.com">sannysrivastava@gmail.com</a>.</p>
+                <p class="multi-option">Have you encountered any problem with our plugin and need our help? Do you need to ask us any question?</p>
+                <p>You can post your question or issues at WordPress <a target="_blank" href="http://wordpress.org/support/plugin/wp-auto-featured-image">Support</a> or can directly mail me at <a href="mailto:sannysrivastava@gmail.com">sannysrivastava@gmail.com</a>.</p>
               </div>
 		</div>
 	</div> 
@@ -76,7 +77,12 @@ function wpafi_start() { ?>
 		<div class="postbox-container postbox" style="width: 99%;">  
 				<h3 class="hndle"><span>Help</span></h3>
                 <div class="inside">
-                <p class="multi-option">We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved few minutes of your effort, kindly get some time for a favor to us and<br />1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br />2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. <br />Any help would be very appreciated. Thanks for using this plugin.<br />Have a good day!!</p>
+                <p class="multi-option">
+                We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved few minutes of your effort, kindly get some time for a favor to us and</p>
+                <p>1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br/>
+                 2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. </p>
+                <p>Any help would be very appreciated. Thanks for using this plugin.<br/>
+                Have a good day!!</p>
               </div>
 		</div>
 	</div>   
@@ -185,4 +191,23 @@ $options = get_option('wpafi_options');
 	
 	# Set thumbnail here
 	set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']); 	
+}
+
+# Custom button text for INSERT MEDIA button
+add_action( 'admin_init', 'wpfi_custom_button_text' );
+function wpfi_custom_button_text() {
+    global $pagenow;
+    if ( 'media-upload.php' == $pagenow || 'async-upload.php' == $pagenow ) {
+        add_filter( 'gettext', 'wpfi_custom_thickbox_text'  , 1, 3 );
+    }
+}
+ 
+function wpfi_custom_thickbox_text($translated_text, $text, $domain) {
+    if ('Insert into Post' == $text) {
+        $referer = strpos( wp_get_referer(), 'wp_afi' );
+        if ( $referer != '' ) {
+            $translated_text = 'Set This My Default Thumbnail';
+        }
+    }
+    return $translated_text;
 }
