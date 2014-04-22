@@ -184,13 +184,19 @@ global $wpdb;
 extract($_POST);
 $options = get_option('wpafi_options');
 
+
+if(!empty($options['wpafi_post_type'])){
 	# Check if this suppose to be set thumbnail
+	if(empty($options['wpafi_post_type'])){
+	return;
+	}
 	if((in_array($post_type, $options['wpafi_post_type']) == 0) || has_post_thumbnail( $post_id ) || empty($options['wpafi_default_thumb_id'])) {
 		return;
 	}
 	
 	# Set thumbnail here
 	set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']); 	
+}	
 }
 
 # Custom button text for INSERT MEDIA button
