@@ -36,17 +36,33 @@ if ( ! defined( 'WP_CONTENT_DIR' ) )
 define( 'WP_Auto_FI_Version', '1.0' );
 define( 'WP_Auto_FI_DIR', WP_PLUGIN_DIR . '/wp-auto-featured-image' );
 define( 'WP_Auto_FI_URL', WP_PLUGIN_URL . '/wp-auto-featured-image' );
+define( 'WP_Auto_ADMIN_URL', get_admin_url(null, 'admin.php?page=wp_auto_featured_image')  );
 
 
 # Add the admin options page
 add_action('admin_menu', 'wpafi_admin_add_page');
 function wpafi_admin_add_page() {
-	add_menu_page('Wordpress Auto Featured Image', 'WP AFI', 'manage_options', 'wp_auto_featured_image', 'wpafi_start');
+	add_options_page('Wordpress Auto Featured Image', 'WP AFI', 'manage_options', 'wp_auto_featured_image', 'wpafi_start');
 }
+
+# Setting option in PLUGIN page
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'my_plugin_action_links' );
+function my_plugin_action_links( $links ) {
+   $links[] = '<a href="'. WP_Auto_ADMIN_URL.'">Settings</a>';
+   $links[] = '<a href="http://www.royalsoftwareservices.com/plugins/" target="_blank">Documentation</a>';
+   return $links;
+}
+
+
 
 # Menu Callback and backend design
 function wpafi_start() { ?>
 <div class="wrap wp_afi">
+<?php if( isset($_GET['settings-updated']) ) { ?>
+    <div id="message" class="updated">
+        <p><strong><?php _e('Settings saved.') ?></strong></p>
+    </div>
+<?php } ?>
 <h2>Wordpress Auto Featured Image</h2>
 <div class="content_area">
 <div class="wp_afi_left_area">
@@ -68,7 +84,7 @@ function wpafi_start() { ?>
 				<h3 class="hndle"><span>Support</span></h3>
                 <div class="inside">
                 <p class="multi-option">Have you encountered any problem with our plugin and need our help? Do you need to ask us any question?</p>
-                <p>You can post your question or issues at WordPress <a target="_blank" href="http://wordpress.org/support/plugin/wp-auto-featured-image">Support</a> or can directly mail me at <a href="mailto:sannysrivastava@gmail.com">sannysrivastava@gmail.com</a>.</p>
+                <p>You can post your question or issues at WordPress <a target="_blank" href="http://wordpress.org/support/plugin/wp-auto-featured-image">Support</a> or can directly  <a href="mailto:sannysrivastava@gmail.com?subject=Support Request For Wordpress Auto Featured Image From <?php bloginfo('url');?>">mail me</a>.</p>
               </div>
 		</div>
 	</div> 
@@ -78,11 +94,35 @@ function wpafi_start() { ?>
 				<h3 class="hndle"><span>Help</span></h3>
                 <div class="inside">
                 <p class="multi-option">
-                We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved few minutes of your effort, kindly get some time for a favor to us and</p>
-                <p>1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br/>
-                 2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. </p>
+                We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved any minutes of your timeffort, kindly get some time for a favor to us and</p>
+                <p>
+                 1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br/>
+                 2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. 
+                </p>
+<form target="_blank" class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" name="_xclick">
+<input type="hidden" name="cmd" value="_xclick" /><input type="hidden" name="business" value="sannysrivastava@gmail.com" />
+<input type="hidden" name="item_name" value="Donate for plugin support" /><input type="hidden" name="currency_code" value="USD" />
+<select name="amount">
+<option value="05.00">05</option>
+<option value="10.00">10</option>
+<option value="15.00">15</option>
+<option value="20.00">20</option>
+<option value="25.00">25</option>
+<option value="50.00">50</option>
+</select>
+<input type="image" alt="Make payments with PayPal - it's fast, free and secure!" name="submit" src="http://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" />
+</form>
                 <p>Any help would be very appreciated. Thanks for using this plugin.<br/>
                 Have a good day!!</p>
+              </div>
+		</div>
+	</div>   
+    <div class="metabox-holder">
+		<div class="postbox-container postbox" style="width: 99%;">  
+				<h3 class="hndle"><span>Hire Me</span></h3>
+                <div class="inside">
+                <p class="multi-option">Do you want more customization on this plugin? or want to develope a new plugin?</p>
+                <p><strong><a href="mailto:sannysrivastava@gmail.com?subject=Hire Request From <?php bloginfo('url');?>">Hire me</a> at just $15/hour.</strong></p>
               </div>
 		</div>
 	</div>   
@@ -97,6 +137,8 @@ function wpafi_admin_init(){
 	register_setting('wpafi_options', 'wpafi_options', 'wpafi_options_validate');
 	add_settings_section('wpafi_main', 'General Settings', 'wpafi_desp', 'wp_auto_featured_image');
 	add_settings_field('wpafi_post_type', 'Include Post Types:', 'wpafi_post_types', 'wp_auto_featured_image', 'wpafi_main');
+	add_settings_field('wpafi_categories', 'Only for these categories:', 'wpafi_categories', 'wp_auto_featured_image', 'wpafi_main');	
+	add_settings_field('wpafi_categories_all', 'Apply categories filter for all post types:', 'wpafi_categories_all', 'wp_auto_featured_image', 'wpafi_main');
 	add_settings_field('wpafi_default_thumb', 'Set Default Thumbnail:', 'wpafi_default_thumb', 'wp_auto_featured_image', 'wpafi_main');
 	add_settings_field('wpafi_default_thumb_id', '', 'wpafi_default_thumb_id', 'wp_auto_featured_image', 'wpafi_main');
 }
@@ -126,14 +168,50 @@ $post_types = get_post_types( array('public' => true), 'names' );
 	}
 } 
 
+function wpafi_categories_all() {
+$options = get_option('wpafi_options');
+// print_r($options);
+
+if($options['wpafi_categories_all'] == 'yes'){
+	$yes = 'checked="checked';
+	$no = '';
+} else {
+	$no = 'checked="checked';
+	$yes = '';
+}
+		echo '
+		<input type="radio" '.$yes.' class="cat_include" name="wpafi_options[wpafi_categories_all]" id="wpafi_text_string-yes" value="yes" />
+		<label class="post-type" for="wpafi_text_string-yes">Yes</label>
+		<input type="radio" '.$no.' class="cat_include" name="wpafi_options[wpafi_categories_all]" id="wpafi_text_string-no" value="no" />
+		<label class="post-type" for="wpafi_text_string-no">No</label>';
+		echo '<span class="note clear">If you set `yes`, only posts (for all selected post types) will be modified that comes under selected categories, if `no` is selected category restriction will only work for WordPress default posts. This setting will not effect for pages.</span>';
+} 
+
+
+function wpafi_categories() {
+$options = get_option('wpafi_options');
+$wpafi_cats = get_categories( array('type'=> 'post','hide_empty'=> 0,'orderby' => 'name', 'order'=> 'ASC' )); 
+
+	foreach ( $wpafi_cats as $wpafi_cat ) {
+		$selected = '';
+		if($options['wpafi_categories']) { 
+			if((is_array($options['wpafi_categories'])) && (in_array($wpafi_cat->slug,$options['wpafi_categories']))) { $selected = " checked='checked'"; }
+		}
+		echo '
+		<input type="checkbox"'.$selected.' name="wpafi_options[wpafi_categories][]" id="wpafi_text_string-'.$wpafi_cat->slug.'" value="'.$wpafi_cat->slug.'" />
+		<label class="post-type" for="wpafi_text_string-'.$wpafi_cat->slug.'">'.$wpafi_cat->name.'</label>';
+	}
+	echo '<span class="note clear">Leave this unchecked if you want to work this plugin for all categories. This setting will not effect for pages.</span>';
+} 
+
 function wpafi_default_thumb() {
 $options = get_option('wpafi_options');
 	if(empty($options['wpafi_default_thumb'])) {
 		echo '<input type="text" id="default_thumb_url" name="wpafi_options[wpafi_default_thumb]" value="" />                          
-		  	  <input id="upload_default_thumb" class="button" type="button" value="Upload Image" />';
+		  	  <input id="upload_default_thumb" class="button" type="button" value="Upload Thumbnail" />';
 	} else { 
 		echo '
-		<input id="upload_default_thumb" class="button" type="button" value="Update Image" />
+		<input id="upload_default_thumb" class="button" type="button" value="Update Thumbnail" />
 		<input type="hidden" id="default_thumb_url" name="wpafi_options[wpafi_default_thumb]" value="'.$options["wpafi_default_thumb"].'" /> 
 		<input id="delete_thumb" name="delete_thumb" type="button" class="button" value="Delete Thumbnail" />
 		<div id="uploaded_thumb_preview">
@@ -180,23 +258,34 @@ function wp_afi_enqueue_scripts(){
 
 add_action('save_post', 'wpfi_set_thumbnail' ); 
 function wpfi_set_thumbnail( $post_id ) {
-global $wpdb;
-extract($_POST);
-$options = get_option('wpafi_options');
-
-
-if(!empty($options['wpafi_post_type'])){
-	# Check if this suppose to be set thumbnail
-	if(empty($options['wpafi_post_type'])){
-	return;
-	}
-	if((in_array($post_type, $options['wpafi_post_type']) == 0) || has_post_thumbnail( $post_id ) || empty($options['wpafi_default_thumb_id'])) {
-		return;
-	}
 	
-	# Set thumbnail here
-	set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']); 	
-}	
+	global $wpdb;
+	extract($_POST);
+	$options = get_option('wpafi_options');
+
+	# Check if this suppose to be set thumbnail.
+	if((!empty($options['wpafi_post_type'])) && (is_array($options['wpafi_post_type'])) && (in_array($post_type, $options['wpafi_post_type']) != 0) && (has_post_thumbnail( $post_id ) == false)) {
+	
+		# If category filter is on.
+		if((is_array($options['wpafi_categories'])) && ($post_type != 'page')){
+				
+				#if restricted for default POST
+				if($options['wpafi_categories_all'] == 'no'){
+					if(in_category($options['wpafi_categories'], $post_id) && ($post_type == 'post')){
+						# Set thumbnail here
+						set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']);
+					}			
+				} elseif($options['wpafi_categories_all'] == 'yes'){
+					if(in_category($options['wpafi_categories'], $post_id)){
+						# Set thumbnail here
+						set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']);
+					}
+				} 
+		} else {
+			# Set thumbnail here
+			set_post_thumbnail( $post_id, $options['wpafi_default_thumb_id']);
+		} 
+	}
 }
 
 # Custom button text for INSERT MEDIA button

@@ -1,25 +1,26 @@
 === Wordpress Auto Featured Image ===
 Contributors: sanny_rss
-Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail
+Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail, Auto Post Thumbnail, WordPress Post Thumbnail
 Donate link: http://royalsoftwareservices.com/donate/
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Choose an image from your library and set this for default featured image for page, post and custom post types.
 
 == Description ==
-Bored to set default images each time for a page, post or custom type or want a image to auto attach as thumbnail if a user ignores setting up a thumbnail? Here is the solution:
+Bored to set default images each time for a page, post or custom type or want an image to auto set as thumbnail if a user ignores setting up a thumbnail? Here is the solution:
 
 This plugin provides you an easy way to set a default thumbnail image for your posts, pages or custom post types. You can select an image from your local machine or media library.
 
-You can access this from the WordPress dashboard => "WAFI" (admin menu)
+You can access this from the WordPress dashboard under Settings => "WAFI" (admin menu)
 
 Option to choose:
 
 * Select an image to set.
+* Select for specific categories.
 * Choose post types for which it will trigger.
 
 Please note this application will trigger and set thumbnail when a new post is being published or modified and missing thumbnail.
@@ -50,11 +51,21 @@ Yes, there is option from admin to set.
 
 == Changelog ==
 
+= 1.1 =
+* Restrict to specific categoriers.
+* Allow Categories for all post types or for POST only.
+* Menu moved under 'Settings'.
+
 = 1.0 =
 * First release.
 
 
 == Upgrade Notice ==
+
+= 1.1 =
+* Restrict to specific categoriers.
+* Allow Categories for all post types or for POST only.
+* Menu moved under 'Settings'.
 
 = 1.0 =
 First Version.

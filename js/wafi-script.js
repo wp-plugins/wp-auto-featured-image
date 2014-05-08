@@ -44,5 +44,11 @@ jQuery(document).ready(function(jQuery){
 		jQuery('#uploaded_thumb_preview img').attr('src',image_url);
  		jQuery('.button-primary').click();
 	}	
+	
+	
+	jQuery('.cat_include').click(function(){
+		jQuery('.cat_include').prop('checked',false);
+		jQuery('.cat_include').prop('checked',true);
+	});
 });
 

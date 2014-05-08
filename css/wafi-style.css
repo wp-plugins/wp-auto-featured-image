@@ -84,3 +84,21 @@
   margin-bottom: 10px;
   padding-bottom: 15px;
 }
+.note {
+  color: #706C6C;
+  float: left;
+  font-size: 12px;
+  width: 100%;
+}
+div.updated {
+  float: left;
+  width: 98%;
+}
+form.paypal select, form.paypal input{
+  float: left;
+}
+form.paypal {
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+}
