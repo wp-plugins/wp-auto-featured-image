@@ -7,7 +7,7 @@
  * Author URI: http://www.royalsoftwareservices.com
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version: 1.0
+ * Version: 1.1
  
 	Copyright (c) 2014 by Sanny Srivastava (sannysrivastava@gmail.com)
 	
