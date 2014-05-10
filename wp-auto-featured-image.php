@@ -244,7 +244,7 @@ add_action('admin_enqueue_scripts', 'wp_afi_enqueue_scripts');
 function wp_afi_enqueue_scripts(){
 	wp_enqueue_style('wafi-style',WP_Auto_FI_URL.'/css/wafi-style.css');						
 	wp_register_script('wafi-script', WP_Auto_FI_URL.'/js/wafi-script.js', array('jquery','media-upload','thickbox') );		
-	if('toplevel_page_wp_auto_featured_image' == get_current_screen()->id) {
+	if('settings_page_wp_auto_featured_image' == get_current_screen()->id) {
 		wp_enqueue_script('jquery');		
 		wp_enqueue_script('thickbox');
 		wp_enqueue_style('thickbox');		
