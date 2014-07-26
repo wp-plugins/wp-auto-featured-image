@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Wordpress Auto Featured Image
- * Plugin URI: http://www.royalsoftwareservices.com/plugins/
+ * Plugin URI: https://sannysrivastava.wordpress.com
  * Description: This plugin provides you an easy way to set a default thumbnail image for your posts, pages or custom post types. You can select an image from your local machine or media library.
  * Author: Sanny Srivastava
- * Author URI: http://www.royalsoftwareservices.com
+ * Author URI: https://sannysrivastava.wordpress.com
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Version: 1.1
@@ -49,7 +49,7 @@ function wpafi_admin_add_page() {
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'my_plugin_action_links' );
 function my_plugin_action_links( $links ) {
    $links[] = '<a href="'. WP_Auto_ADMIN_URL.'">Settings</a>';
-   $links[] = '<a href="http://www.royalsoftwareservices.com/plugins/" target="_blank">Documentation</a>';
+   $links[] = '<a href="" target="_blank">Documentation</a>';
    return $links;
 }
 
@@ -97,7 +97,7 @@ function wpafi_start() { ?>
                 We need your support to make this and other plugins more smarter and helpful for you, if this plugin saved any minutes of your timeffort, kindly get some time for a favor to us and</p>
                 <p>
                  1) <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/wp-auto-featured-image">Rate this plugin.</a><br/>
-                 2) Make a small <a href="http://www.royalsoftwareservices.com/donate/" target="_blank"> donation</a> for us. 
+                 2) Make a small <a href="https://sannysrivastava.wordpress.com" target="_blank"> donation</a> for us. 
                 </p>
 <form target="_blank" class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" name="_xclick">
 <input type="hidden" name="cmd" value="_xclick" /><input type="hidden" name="business" value="sannysrivastava@gmail.com" />
