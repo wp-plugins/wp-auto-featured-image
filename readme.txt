@@ -1,7 +1,7 @@
 === Wordpress Auto Featured Image ===
 Contributors: sanny_rss
 Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail, Auto Post Thumbnail, WordPress Post Thumbnail
-Donate link: http://royalsoftwareservices.com/donate/
+Donate link: https://sannysrivastava.wordpress.com
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 1.1
