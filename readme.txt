@@ -3,8 +3,8 @@ Contributors: sanny_rss
 Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail, Auto Post Thumbnail, WordPress Post Thumbnail
 Donate link: https://sannysrivastava.wordpress.com
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.1
+Tested up to: 3.9.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,10 @@ Yes, there is option from admin to set it for custom post types.
 Yes, there is option from admin to set.
 
 == Changelog ==
+
+= 1.2 =
+* Bug Fix [Featured Image Return To Default When making Changes to Content]
+https://wordpress.org/support/topic/when-featured-image-is-selected-it-still-use-the-default-image
 
 = 1.1 =
 * Restrict to specific categoriers.
