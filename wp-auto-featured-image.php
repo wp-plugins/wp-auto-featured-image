@@ -7,7 +7,7 @@
  * Author URI: https://sannysrivastava.wordpress.com
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version: 1.1
+ * Version: 1.2
  
 	Copyright (c) 2014 by Sanny Srivastava (sannysrivastava@gmail.com)
 	
@@ -263,6 +263,10 @@ function wpfi_set_thumbnail( $post_id ) {
 	extract($_POST);
 	$options = get_option('wpafi_options');
 
+	if(( wp_is_post_revision( $post_id) || wp_is_post_autosave( $post_id ) ) ) {
+		return;
+	}
+	
 	# Check if this suppose to be set thumbnail.
 	if((!empty($options['wpafi_post_type'])) && (is_array($options['wpafi_post_type'])) && (in_array($post_type, $options['wpafi_post_type']) != 0) && (has_post_thumbnail( $post_id ) == false)) {
 	
