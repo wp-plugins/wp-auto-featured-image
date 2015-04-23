@@ -50,6 +50,8 @@ Yes, there is option from admin to set it for custom post types.
 Yes, there is option from admin to set.
 
 == Changelog ==
+= 1.3 =
+* Bug Fix, WHITE blank screen when choosing image for featured image from plugin panel.
 
 = 1.2 =
 * Bug Fix [Featured Image Return To Default When making Changes to Content]
