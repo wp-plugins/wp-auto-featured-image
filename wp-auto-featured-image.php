@@ -7,7 +7,7 @@
  * Author URI: https://sannysrivastava.wordpress.com
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version: 1.2
+ * Version: 1.3
  
 	Copyright (c) 2014 by Sanny Srivastava (sannysrivastava@gmail.com)
 	
@@ -291,6 +291,13 @@ function wpfi_set_thumbnail( $post_id ) {
 		} 
 	}
 }
+
+function wedevs_send_to_editor( $html, $id ) {
+    return str_replace( '<a href', '<a data-id="' . $id . '" href', $html );
+}
+
+add_filter( 'image_send_to_editor', 'wedevs_send_to_editor', 10, 2 );
+
 
 # Custom button text for INSERT MEDIA button
 add_action( 'admin_init', 'wpfi_custom_button_text' );

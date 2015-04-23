@@ -25,9 +25,9 @@ jQuery(document).ready(function(jQuery){
 
 	 if (form_field) {
 			var itemRS = jQuery(html);
-			var class_string = itemRS.attr('class');
 			var image_url       = itemRS.attr( 'src' );
 			
+/*			var class_string = itemRS.attr('class');			
             var classes         = class_string.split( /\s+/ );
             var image_id        = 0;
 
@@ -36,7 +36,10 @@ jQuery(document).ready(function(jQuery){
                 if ( source && source.length > 1 ) {
                     image_id = parseInt( source[1] );
                 }
-            }
+            }*/
+			var image_id = jQuery(html).data('id');
+			
+			
 	 }
 	 
 		var image_url = jQuery('img',html).attr('src');

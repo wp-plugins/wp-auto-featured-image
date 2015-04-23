@@ -3,8 +3,8 @@ Contributors: sanny_rss
 Tags: Featured Image, Auto Featured Image, Default Featured Image, Auto, Default, Post Thumbnail, Auto Post Thumbnail, Set Post Thumbnail, Auto Post Thumbnail, WordPress Post Thumbnail
 Donate link: https://sannysrivastava.wordpress.com
 Requires at least: 3.0
-Tested up to: 3.9.2
-Stable tag: 1.2
+Tested up to: 4.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
