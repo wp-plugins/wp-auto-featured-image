@@ -24,8 +24,10 @@ jQuery(document).ready(function(jQuery){
 	window.send_to_editor = function(html) {
 
 	 if (form_field) {
-            var class_string    = jQuery( 'img', html ).attr( 'class' );
-            var image_url       = jQuery( 'img', html ).attr( 'src' );
+			var itemRS = jQuery(html);
+			var class_string = itemRS.attr('class');
+			var image_url       = itemRS.attr( 'src' );
+			
             var classes         = class_string.split( /\s+/ );
             var image_id        = 0;
 
